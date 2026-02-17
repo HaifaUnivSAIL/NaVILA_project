@@ -1,0 +1,34 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run NaVILA's training",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/NaVILA/debug_train_mem.py",
+      "console": "integratedTerminal",
+      "justMyCode": false,
+      "args": []
+    },
+    {
+      "name": "Run NaVILA's Evaluation",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/NaVILA/evaluation/run.py",
+      "console": "integratedTerminal",
+      "justMyCode": false,
+      "args": [
+        "--exp-config",
+        "${workspaceFolder}/NaVILA/evaluation/vlnce_baselines/config/r2r_baselines/navila.yaml",
+        "--run-type",
+        "eval",
+        "--num-chunks",
+        "1",
+        "--chunk-idx",
+        "0",
+        "EVAL_CKPT_PATH_DIR",
+        "/mnt/dataset/NaVILA_Dataset/checkpoints/navila-llama3-8b-8f"
+      ]
+    }
+  ]
+}
